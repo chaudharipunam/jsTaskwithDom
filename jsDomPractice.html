@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Filter</title>
+    <style>
+        img{
+            height: 150px;
+            margin: 10px;
+            width: 300px;
+            display: none;
+        }
+
+        main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        header{
+            display: flex;
+            justify-content: center;
+        }
+
+        button{
+            margin: 10px;
+            padding: 10px 15px;
+            font-weight: 900;
+        }
+
+        button:hover{
+            color: white;
+            font-weight: 900;
+            background-color: darkblue;
+            border-radius: 20px;
+        }
+
+        @media(max-width:300px){
+            button{
+                margin: 5px;
+                padding: 5px 7px;
+                font-weight: 100;
+            }
+
+            img{
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button id="all-menus">All</button>
+        <button id="Cars">Car</button>
+        <button id="Mobiles">Mobiles</button>
+        <button id="Bikes">Bikes</button>
+    </header>
+
+    <main>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrQY9RaGIGtMbJE1VePWT9v5h1pDGySLvAnA&s" class="carImg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVIfVYybA-k27LPDXArr9hTJNObWhfekuzCA&s" class="MobileImg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZZ8UxsFjkUs5dobvAYNJR3Q4p9HckUOZfCw&s" class="carImg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcTJ3GmUrfdiOTeKPfjQFae5eAE_sEVN3K4w&s" class="bikeImg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjDPaNO39NqXXRFxkiI9AWfHxGSEbOI2y8EA&s" class="MobileImg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsJyvLffgwxpgkpowTwOcCtVKkSnU32kDAqQ&s" class="carImg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR54g-oq2zlN5aLO0_Q12ZvSWi8QLj4lIAtxQ&s" class="bikeImg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL-eWM8Si9XLBKzZRdWDc_fxi4SXCvWu4xsg&s" class="carImg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIPGTM92ndJmcQr-6GyIikyG8lGY27KNhLFA&s" class="MobileImg">
+    </main>
+
+    <script>
+        let allMenusBtn = document.getElementById("all-menus");
+        let carBtn = document.getElementById("Cars");
+        let mobileBtn = document.getElementById("Mobiles");
+        let bikeBtn = document.getElementById("Bikes");
+
+        let carImages = document.querySelectorAll(".carImg");
+        let mobileImages = document.querySelectorAll(".MobileImg");
+        let bikeImages = document.querySelectorAll(".bikeImg");
+
+        function showAllImages(){
+            hideAllImages();
+            carImages.forEach((img)=>{
+                img.style.display = 'block';
+            });
+
+            mobileImages.forEach((img)=>{
+                img.style.display = 'block';
+            });
+
+            bikeImages.forEach((img)=>{
+                img.style.display = 'block';
+            });
+        }
+
+        function hideAllImages(){
+            carImages.forEach((img)=>{
+                img.style.display = 'none';
+            });
+
+            mobileImages.forEach((img)=>{
+                img.style.display = 'none';
+            });
+
+            bikeImages.forEach((img)=>{
+                img.style.display = 'none';
+            });
+        }
+
+        function showCarImages(){
+            hideAllImages();
+            carImages.forEach((img)=>{
+                img.style.display = 'block';
+            });
+        }
+
+        function showMobileImages(){
+            hideAllImages();
+            mobileImages.forEach((img)=>{
+                img.style.display = 'block';
+            });
+        }
+
+        function showBikeImages(){
+            hideAllImages();
+            bikeImages.forEach((img)=>{
+                img.style.display = 'block';
+            });
+        }
+
+        allMenusBtn.addEventListener('click', showAllImages);
+        carBtn.addEventListener('click', showCarImages);
+        mobileBtn.addEventListener('click', showMobileImages);
+        bikeBtn.addEventListener('click', showBikeImages);
+     
+        showAllImages();
+    </script>
+</body>
+</html>
